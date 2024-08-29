@@ -16,7 +16,7 @@ use App\Repository\TestRepository;
 class IndexController extends AbstractController
 {
     /**
-     * @Route("/")
+     * @Route("/home")
      */
     public function index(CategoryRepository $categoryRepository ,SerializerInterface $serial)
     {
