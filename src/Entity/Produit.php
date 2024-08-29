@@ -16,10 +16,13 @@ use Symfony\Component\Serializer\Annotation\Groups;
 /**
  * @ORM\Entity(repositoryClass=ProduitRepository::class)
  * @Vich\Uploadable
+ *
  */
+
 class Produit
 {
     /**
+     * @Groups("p")
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
@@ -27,108 +30,128 @@ class Produit
     private $id;
 
     /**
+     * @Groups("p")
      * @ORM\Column(type="integer")
      */
     private $Longueur;
 
     /**
+     * @Groups("p")
      * @ORM\Column(type="integer")
      */
     private $Largeur;
 
     /**
+     * @Groups("p")
      * @ORM\Column(type="string", length=255)
      */
     private $couleur;
 
     /**
-     * @Groups("prix")
+     * @Groups("p")
      * @ORM\Column(type="string", length=255)
      */
     private $prix;
 
     /**
+     * @Groups("p")
      * @ORM\Column(type="boolean")
      *
      */
     private $Disponabilite;
 
     /**
+     * @Groups("p")
      * @ORM\Column(type="string", length=255)
      */
     private $Etat;
 
     /**
+     * @Groups("p")
      * @ORM\Column(type="text")
      */
     private $Description;
 
     /**
+     * @Groups("p")
      * @ORM\Column(type="float")
      */
     private $Poids;
 
     /**
+     * @Groups("p")
      * @ORM\Column(type="string", length=255)
      */
     private $Model;
 
     /**
+     * @Groups("p")
      * @ORM\Column(type="string", length=255)
      */
     private $Qualite;
 
     /**
+     * @Groups("p")
      * @ORM\Column(type="string", length=255)
      */
     private $Matiere;
 
     /**
+     * @Groups("p")
      * @ORM\Column(type="string", length=255)
      */
     private $Titre;
 
     /**
+     * @Groups("p")
      * @ORM\Column(type="string", length=255)
      */
     private $reference;
     /**
+     * @Groups("p")
      * @ORM\Column(type="string", length=500)
      * @var string
      */
     private $Image;
 
     /**
+     * @Groups("p")
      * @Vich\UploadableField(mapping="image_upload", fileNameProperty="Image")
      * @var File
      */
     private $ImageFile;
 
     /**
+     * @Groups("p")
      * @ORM\Column(type="datetime")
      */
     private $updatedAt;
 
     /**
+     * @Groups("p")
      * @ORM\ManyToOne(targetEntity=Category::class, inversedBy="produits", cascade={"remove"})
      */
     private $Category;
 
     /**
+     * @Groups("produit")
      * @ORM\ManyToOne(targetEntity=SousCategory::class, inversedBy="produits", cascade={"remove"})
      */
     private $SousCategories;
 
     /**
+     * @Groups("produit")
      * @ORM\ManyToOne(targetEntity=Type::class, inversedBy="produits", cascade={"remove"})
      */
     private $Types;
 
     /**
+     * @Groups("produit")
      * @ORM\OneToMany(targetEntity=Commande::class, mappedBy="Produit")
      */
     private $commandes;
     /**
+     * @Groups("produit")
      * @ORM\OneToMany(targetEntity=Promotion::class, mappedBy="produit", orphanRemoval=true)
      */
     private $promos;
