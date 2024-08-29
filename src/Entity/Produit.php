@@ -10,6 +10,8 @@ use Doctrine\ORM\Mapping\JoinColumn;
 use Doctrine\ORM\Mapping\ManyToOne;
 use Symfony\Component\HttpFoundation\File\File;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Symfony\Component\Serializer\Annotation\Groups;
+
 
 /**
  * @ORM\Entity(repositoryClass=ProduitRepository::class)
@@ -40,12 +42,14 @@ class Produit
     private $couleur;
 
     /**
+     * @Groups("prix")
      * @ORM\Column(type="string", length=255)
      */
     private $prix;
 
     /**
      * @ORM\Column(type="boolean")
+     *
      */
     private $Disponabilite;
 
