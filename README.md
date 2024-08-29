@@ -8,3 +8,4 @@ run:
     -  composer install
     -  import database in phpmyadmin dans une base de donnee mariadb avec le port 3307 sans pass
     -  symfony local:server:start
+route pour service qui renvoit les cat et sous cat et produit :  /home 
