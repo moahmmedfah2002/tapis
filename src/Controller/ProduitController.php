@@ -4,6 +4,8 @@ namespace App\Controller;
 
 use App\Entity\Produit;
 use App\Repository\ProduitRepository;
+
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Validator\Constraints\Date;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -31,7 +33,7 @@ class ProduitController extends AbstractController
     /**
      * @Route("/produit")
      */
-    public function produit(ProduitRepository $produitRepository,SerializerInterface $serializer){
+    public function produit(ProduitRepository $produitRepository,SerializerInterface $serializer,Request $request){
         $produit=new Produit();
         $produit->setTitre("test");
         $produit->setCouleur("blue");
@@ -52,7 +54,7 @@ class ProduitController extends AbstractController
 
         $produitRepository->add($produit,true);
         if(!empty($_GET['id'])) {
-            $produit = $produitRepository->findById($_GET['id']);
+            $produit = $produitRepository->findById($request->get('id'));
 
             $produit=$serializer->serialize($produit,'json',['groups'=>'p']);
             return new JsonResponse($produit,200,[],true);
@@ -63,4 +65,25 @@ class ProduitController extends AbstractController
         }
 
     }
+
+    /**
+     * @Route("/addProduct",methods={POST})
+     */
+    public function addProduct(ProduitRepository $produitRepository ,SerializerInterface $serializer,Request $request){
+
+
+
+        $val=$request->getContent();
+        $f=fopen("./hi.png",'w');
+        fwrite($f,$val);
+        fclose($f);
+
+
+        return new JsonResponse("{img:$val}",200,[],true);
+
+
+    }
+
+
+
 }
