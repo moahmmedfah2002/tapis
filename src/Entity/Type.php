@@ -19,6 +19,7 @@ class Type
 {
     /**
      * @ORM\Id
+     * @group("id")
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      */

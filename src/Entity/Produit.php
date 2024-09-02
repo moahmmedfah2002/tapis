@@ -30,19 +30,19 @@ class Produit
     private $id;
 
     /**
-     * @Groups("p")
+     * @Groups("n")
      * @ORM\Column(type="integer")
      */
     private $Longueur;
 
     /**
-     * @Groups("p")
+     * @Groups("n")
      * @ORM\Column(type="integer")
      */
     private $Largeur;
 
     /**
-     * @Groups("p")
+     * @Groups("n")
      * @ORM\Column(type="string", length=255)
      */
     private $couleur;
@@ -54,14 +54,14 @@ class Produit
     private $prix;
 
     /**
-     * @Groups("p")
+     * @Groups("n")
      * @ORM\Column(type="boolean")
      *
      */
     private $Disponabilite;
 
     /**
-     * @Groups("p")
+     * @Groups("n")
      * @ORM\Column(type="string", length=255)
      */
     private $Etat;
@@ -73,25 +73,25 @@ class Produit
     private $Description;
 
     /**
-     * @Groups("p")
+     * @Groups("n")
      * @ORM\Column(type="float")
      */
     private $Poids;
 
     /**
-     * @Groups("p")
+     * @Groups("n")
      * @ORM\Column(type="string", length=255)
      */
     private $Model;
 
     /**
-     * @Groups("p")
+     * @Groups("n")
      * @ORM\Column(type="string", length=255)
      */
     private $Qualite;
 
     /**
-     * @Groups("p")
+     * @Groups("n")
      * @ORM\Column(type="string", length=255)
      */
     private $Matiere;
@@ -103,7 +103,7 @@ class Produit
     private $Titre;
 
     /**
-     * @Groups("p")
+     * @Groups("n")
      * @ORM\Column(type="string", length=255)
      */
     private $reference;
@@ -115,7 +115,7 @@ class Produit
     private $Image;
 
     /**
-     * @Groups("p")
+     * @Groups("n")
      * @Vich\UploadableField(mapping="image_upload", fileNameProperty="Image")
      * @var File
      */
@@ -128,19 +128,19 @@ class Produit
     private $updatedAt;
 
     /**
-     * @Groups("p")
+     * @Groups("cat")
      * @ORM\ManyToOne(targetEntity=Category::class, inversedBy="produits", cascade={"remove"})
      */
     private $Category;
 
     /**
-     * @Groups("produit")
+     * @Groups("s")
      * @ORM\ManyToOne(targetEntity=SousCategory::class, inversedBy="produits", cascade={"remove"})
      */
     private $SousCategories;
 
     /**
-     * @Groups("produit")
+     * @Groups("t")
      * @ORM\ManyToOne(targetEntity=Type::class, inversedBy="produits", cascade={"remove"})
      */
     private $Types;

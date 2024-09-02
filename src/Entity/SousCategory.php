@@ -21,6 +21,7 @@ class SousCategory
 {
     /**
      * @ORM\Id
+     * @Groups("id")
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      */

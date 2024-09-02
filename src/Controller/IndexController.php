@@ -23,7 +23,7 @@ class IndexController extends AbstractController
 
          $categories = $categoryRepository->findAll();
          
-         $categories=$serial->serialize($categories,'json', ['groups' => ['nom','desc','sous','type']]);
+         $categories=$serial->serialize($categories,'json', ['groups' => ['id','nom','sous','type']]);
         return  new JsonResponse($categories,Response::HTTP_OK,[],TRUE);
 
     }

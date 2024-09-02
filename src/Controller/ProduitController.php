@@ -25,7 +25,7 @@ class ProduitController extends AbstractController
 
         $produites = $produitRepository->findAll();
 
-        $categories=$serial->serialize($produites,'json', ['groups' => ['p']]);
+        $categories=$serial->serialize($produites,'json', ['groups' => ['p','cat','nom','id']]);
         return  new JsonResponse($categories,Response::HTTP_OK,[],TRUE);
 
     }
@@ -66,23 +66,23 @@ class ProduitController extends AbstractController
 
     }
 
-    /**
-     * @Route("/addProduct",methods={POST})
-     */
-    public function addProduct(ProduitRepository $produitRepository ,SerializerInterface $serializer,Request $request){
-
-
-
-        $val=$request->getContent();
-        $f=fopen("./hi.png",'w');
-        fwrite($f,$val);
-        fclose($f);
-
-
-        return new JsonResponse("{img:$val}",200,[],true);
-
-
-    }
+//    /**
+//     * @Route("/addProduct",methods={POST})
+//     */
+//    public function addProduct(ProduitRepository $produitRepository ,SerializerInterface $serializer,Request $request){
+//
+//
+//
+//        $val=$request->getContent();
+//        $f=fopen("./hi.png",'w');
+//        fwrite($f,$val);
+//        fclose($f);
+//
+//
+//        return new JsonResponse("{img:$val}",200,[],true);
+//
+//
+//    }
 
 
 
