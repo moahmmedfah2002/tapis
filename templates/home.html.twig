@@ -1,13 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "base.html.twig" %}
+
+{% block body %}
+
 <ul>
     <li>pour tout les produit -> <a href="/produits">/produits</a></li>
     <li>pour le produit qui porte l'id 1 -><a href="/produit?id=1">/produit?id=1</a></li>
 </ul>
-</body>
-</html>
+{% endblock %}
