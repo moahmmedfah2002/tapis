@@ -25,7 +25,7 @@ class ProduitController extends AbstractController
 
         $produites = $produitRepository->findAll();
 
-        $categories=$serial->serialize($produites,'json', ['groups' => ['p','cat','nom','id']]);
+        $categories=$serial->serialize($produites,'json', ['groups' => ['p','cat',"s","t",'nom','id']]);
         return  new JsonResponse($categories,Response::HTTP_OK,[],TRUE);
 
     }

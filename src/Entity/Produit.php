@@ -30,19 +30,19 @@ class Produit
     private $id;
 
     /**
-     * @Groups("n")
+     * @Groups("p")
      * @ORM\Column(type="integer")
      */
     private $Longueur;
 
     /**
-     * @Groups("n")
+     * @Groups("p")
      * @ORM\Column(type="integer")
      */
     private $Largeur;
 
     /**
-     * @Groups("n")
+     * @Groups("p")
      * @ORM\Column(type="string", length=255)
      */
     private $couleur;
@@ -61,7 +61,7 @@ class Produit
     private $Disponabilite;
 
     /**
-     * @Groups("n")
+     * @Groups("p")
      * @ORM\Column(type="string", length=255)
      */
     private $Etat;
@@ -73,25 +73,25 @@ class Produit
     private $Description;
 
     /**
-     * @Groups("n")
+     * @Groups("p")
      * @ORM\Column(type="float")
      */
     private $Poids;
 
     /**
-     * @Groups("n")
+     * @Groups("p")
      * @ORM\Column(type="string", length=255)
      */
     private $Model;
 
     /**
-     * @Groups("n")
+     * @Groups("p")
      * @ORM\Column(type="string", length=255)
      */
     private $Qualite;
 
     /**
-     * @Groups("n")
+     * @Groups("p")
      * @ORM\Column(type="string", length=255)
      */
     private $Matiere;
@@ -103,7 +103,7 @@ class Produit
     private $Titre;
 
     /**
-     * @Groups("n")
+     * @Groups("p")
      * @ORM\Column(type="string", length=255)
      */
     private $reference;
@@ -146,7 +146,7 @@ class Produit
     private $Types;
 
     /**
-     * @Groups("produit")
+     * @Groups("c")
      * @ORM\OneToMany(targetEntity=Commande::class, mappedBy="Produit")
      */
     private $commandes;
